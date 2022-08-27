@@ -8,19 +8,19 @@ namespace BlogProject.Enums
 {
     public enum ModerationType
     {
-        [Description("Politcal propaganda")]
+        [Description("Political Propaganda")]
         Political,
-        [Description("Offensive language")]
+        [Description("Offensive Language")]
         Language,
-        [Description("Drug references")]
+        [Description("Drug References")]
         Drugs,
-        [Description("Threatening speech")]
+        [Description("Threatening Speech")]
         Threatening,
-        [Description("Sexual content")]
+        [Description("Sexual Content")]
         Sexual,
-        [Description("Hate speech")]
+        [Description("Hate Speech")]
         HateSpeech,
-        [Description("Targeted shaming")]
+        [Description("Targeted Shaming")]
         Shaming
     }
 }

@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace BlogProject.Enums
 {
-    public enum ReadyStatus
+    public enum BlogRole
     {
-        Incomplete,
-        ProductionReady,
-        PreviewReady
+        Administrator,
+        Moderator
     }
 }
