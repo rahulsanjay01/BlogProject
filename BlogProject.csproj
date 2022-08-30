@@ -16,6 +16,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17" />
     <PackageReference Include="Npgsql" Version="5.0.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.2" />
+    <PackageReference Include="X.PagedList" Version="8.4.3" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.3" />
+    <PackageReference Include="X.PagedList.Web.Common" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

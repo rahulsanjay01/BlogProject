@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@using BlogProject.Services
+
+@inject UserManager<BlogUser> userManager
+@inject IImageService imageService
+@model IPagedList<Post>
+
+<div class="container">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        @foreach (var post in Model)
+        {
+            <div class="col d-flex flex-column justify-content-center align-items-center m-3 container-fluid">
+                <div id="postThumbnail" class="card border-0 rounded text-white mb-2" style="width: 25rem; height: 25rem;">
+
+                    <img class="card-img rounded" src="@imageService.DecodeImage(post.ImageData, post.ContentType)" style="height: 100%; width: auto; object-fit: cover;" />
+                    <a asp-action="Details" asp-route-slug="@post.Slug">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div>
+                                <h2 class="card-title text-white">@post.Title</h2>
+                            </div>
+                            <small class="card-text text-white shadow-sm">
+                                Rahul Ahir
+                                - @post.Created.ToString("MMM dd, yyyy")
+                            </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<hr class="mt-4" />
+
+<div class="row d-flex justify-content-center">
+    <div class="col h3 d-flex justify-content-center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    </div>
+    <div class="col d-flex justify-content-center">
+        @Html.PagedListPager(Model, page => Url.Action("BlogPostIndex", new { id = Model.FirstOrDefault().BlogId, page = page }),
+            new PagedListRenderOptions
+            {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" }
+            })
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@using BlogProject.ViewModels
+@model ContactMe
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>Want to get in touch? Fill out the form below to send me a message, and I will get back to you as soon as possible!</p>
+            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+            <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+            <form asp-action="Contact">
+                <div class="control-group">
+                    <div class="form-group form-floating">
+                        <input type="text" class="form-control" placeholder="Name" asp-for="Name" required data-validation-required-message="Please enter your name.">
+                        <label>Name</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group form-floating">
+                        <input type="email" class="form-control" placeholder="Email Address" asp-for="Email" required data-validation-required-message="Please enter your email address.">
+                        <label>Email Address</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group col-xs-12 form-floating">
+                        <input type="tel" class="form-control" placeholder="Phone Number" asp-for="Phone" required data-validation-required-message="Please enter your phone number.">
+                        <label>Phone Number</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group col-xs-12 form-floating">
+                        <input class="form-control" placeholder="Subject" asp-for="Subject" required data-validation-required-message="Please enter your phone number.">
+                        <label>Subject</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group">
+                        <textarea rows="5" asp-for="Message" required data-validation-required-message="Please enter a message." id="summernote"></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div id="success"></div>
+                <button type="submit" class="btn btn-primary mb-4 rounded" id="sendMessageButton">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        //Default font size but not for placeholder...
+        $('#Message').summernote({
+            placeholder: "Message"
+        });
+    </script>
+
+}

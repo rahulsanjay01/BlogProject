@@ -1,8 +1,37 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using BlogProject.Models
+@using BlogProject.Services
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model IPagedList<Blog>
+@inject IImageService _imageService
+
+@{ ViewData["Title"] = "Home Page"; }
+
+<div class="row row-cols-1 row-cols-md-2 w-100 mx-0">
+    @foreach (var blog in Model)
+    {
+<div class="col px-0 overflow-hidden">
+    <a asp-controller="Posts" asp-action="BlogPostIndex" asp-route-id="@blog.Id"><img class="imageZoom" src="@_imageService.DecodeImage(blog.ImageData, blog.ContentType)" /></a>
+</div>}
 </div>
+
+
+<!-- Add Paging Controls Here -->
+@*<div class="row">
+        <div class="col h3 d-flex justify-content-center">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col d-flex justify-content-center mb-1">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),
+                new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] {"page-item"},
+                    PageClasses = new string[] {"page-link"}
+                })
+        </div>
+    </div>*@

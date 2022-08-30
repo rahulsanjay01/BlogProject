@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace BlogProject.Data.Migrations
+namespace BlogProject.data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220827053055_001")]
+    [Migration("20220830025425_001")]
     partial class _001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

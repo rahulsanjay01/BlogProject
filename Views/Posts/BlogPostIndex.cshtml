@@ -1,0 +1,111 @@
+﻿@using BlogProject.Services
+@using BlogProject.Models
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+
+@inject IImageService imageService
+@model IPagedList<Post>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Abstract
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img class="img-fluid" width="200" src="@imageService.DecodeImage(item.ImageData, item.ContentType)" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Abstract)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-slug="@item.Slug">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+<div class="container mt-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        @if (User.IsInRole("Administrator"))
+        {
+            <p class="d-flex justify-content-center">
+                <a asp-action="Create" class="btn btn-md rounded btn-warning text-decoration-none">Create New Post</a>
+            </p>
+        }
+
+        @foreach (var item in Model)
+        {
+            <div class="col d-flex flex-column justify-content-center align-items-center m-3 container-fluid">
+                <div id="postThumbnail" class="card border-0 rounded text-white mb-2" style="width: 25rem; height: 25rem;">
+
+                    <img class="card-img rounded" src="@imageService.DecodeImage(item.ImageData, item.ContentType)" style="height: 100%; width: auto; object-fit: cover;" />
+                    <a asp-action="Details" asp-route-slug="@item.Slug">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <div>
+                                <h2 class="card-title text-white">@item.Title</h2>
+                            </div>
+                            <small class="card-text text-white shadow-sm">
+                                Rahul Ahir
+                                - @item.Created.ToString("MMM dd, yyyy")
+                            </small>
+                        </div>
+                    </a>
+                </div>
+                @if (User.IsInRole("Administrator"))
+                {
+                    <div class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-slug="@item.Slug">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </div>
+                }
+
+            </div>
+        }
+    </div>
+</div>
+
+<hr />
+
+<div class="row d-flex justify-content-center align-content-center mt-1">
+    <div class="col h3 d-flex justify-content-center">
+        <div class="d-flex text-center mb-0">
+            <p class="m-2 mb-0">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+        </div>
+    </div>
+    <div class="col d-flex justify-content-center align-content-center mb-1">
+        @Html.PagedListPager(Model, page => Url.Action("BlogPostIndex", new { id = Model.FirstOrDefault().BlogId, page = page }),
+            new PagedListRenderOptions
+            {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" }
+            })
+    </div>
+</div>

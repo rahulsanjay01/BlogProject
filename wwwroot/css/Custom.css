@@ -1,0 +1,33 @@
+﻿button.btn-md, a.btn-sm {
+    line-height: .5;
+    border-radius: 10px;
+}
+
+div.swal2-container.swal2-center.swal2-backdrop-show > div {
+    outline: 4px solid black;
+    border: 2px solid #ff993b;
+}
+
+#postThumbnail {
+    transition: box-shadow .2s;
+}
+
+#postThumbnail:hover {
+    box-shadow: 0 0 8px rgba(33,33,33,.8);
+}
+
+#postContent img {
+    width: auto;
+}
+
+.imageZoom {
+    max-width: 100%;
+    height: auto;
+    transition: all .5s;
+}
+
+    .imageZoom:hover {
+        -moz-transform: scale(1.08);
+        -webkit-transform: scale(1.08);
+        transform: scale(1.08);
+    }

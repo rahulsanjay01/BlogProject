@@ -66,11 +66,11 @@ namespace BlogProject.Services
             //Step 1: Creates a new instance of BlogUser
             var adminUser = new BlogUser()
             {
-                Email = "brenden.c.bass@gmail.com",
-                UserName = "brenden.c.bass@gmail.com",
-                FirstName = "Brenden",
-                LastName = "Bass",
-                DisplayName = "brendenbass",
+                Email = "a.rahul.sanjay@gmail.com",
+                UserName = "a.rahul.sanjay@gmail.com",
+                FirstName = "Rahul",
+                LastName = "Ahir",
+                DisplayName = "rahulahir",
                 PhoneNumber = "(800) 555-1212",
                 EmailConfirmed = true
             };
@@ -84,12 +84,12 @@ namespace BlogProject.Services
             //Step 1 Repeat: Create the moderator user
             var modUser = new BlogUser()
             {
-                Email = "AndrewRussell@CoderFoundry.com",
-                UserName = "AndrewRussell@CoderFoundry.com",
-                FirstName = "Andrew",
-                LastName = "Russell",
-                DisplayName = "The other Professor",
-                PhoneNumber = "(800) 555-1213",
+                Email = "Visitor@gmail.com",
+                UserName = "Visitor@gmail.com",
+                FirstName = "Visitor",
+                LastName = "Guest",
+                DisplayName = "Guest Visitor",
+                PhoneNumber = "(800) 555-1111",
                 EmailConfirmed = true
             };
 
