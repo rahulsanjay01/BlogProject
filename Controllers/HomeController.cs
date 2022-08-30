@@ -45,7 +45,6 @@ namespace BlogProject.Controllers
 
             ViewData["HeaderImage"] = "/images/home-bg.jpg";
             ViewData["MainText"] = "Rahul's Blog";
-            ViewData["SubText"] = "Coding & Life";
 
             return View(await blogs);
         }
@@ -54,7 +53,6 @@ namespace BlogProject.Controllers
         {
             ViewData["HeaderImage"] = "/images/home-bg.jpg";
             ViewData["MainText"] = "Rahul's Blog";
-            ViewData["SubText"] = "Coding & Life";
 
             return View();
         }
@@ -63,7 +61,6 @@ namespace BlogProject.Controllers
         {
             ViewData["HeaderImage"] = "/images/home-bg.jpg";
             ViewData["MainText"] = "Rahul's Blog";
-            ViewData["SubText"] = "Coding & Life";
 
             return View();
         }

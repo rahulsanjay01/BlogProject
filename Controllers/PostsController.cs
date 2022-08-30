@@ -75,7 +75,7 @@ namespace BlogProject.Controllers
 
             ViewData["HeaderImage"] = "/images/home-bg.jpg";
             ViewData["MainText"] = "Blog Posts";
-            ViewData["SubText"] = "Read more below!";
+            ViewData["SubText"] = "Read more below";
 
             return View(posts);
         }
