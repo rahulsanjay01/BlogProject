@@ -95,6 +95,7 @@ namespace BlogProject.Areas.Identity.Pages.Account
         {
             ViewData["HeaderImage"] = "/images/home-bg.jpg";
             ViewData["MainText"] = "Rahul's Blog";
+            ViewData["SubText"] = "Software Stories";
 
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
