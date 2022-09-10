@@ -57,7 +57,7 @@ namespace BlogProject.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Rahul's Blog";
             ViewData["SubText"] = "Software Stories";
 

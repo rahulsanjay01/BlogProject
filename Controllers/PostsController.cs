@@ -37,7 +37,7 @@ namespace BlogProject.Controllers
         {
             ViewData["SearchTerm"] = searchTerm;
 
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Rahul's Blog";
             ViewData["SubText"] = "Search Blog Posts";
 
@@ -73,7 +73,7 @@ namespace BlogProject.Controllers
                  .OrderByDescending(p => p.Created)
                  .ToPagedListAsync(pageNumber, pageSize);
 
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Blog Posts";
             ViewData["SubText"] = "Read more below";
 

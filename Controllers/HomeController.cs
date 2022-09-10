@@ -43,7 +43,7 @@ namespace BlogProject.Controllers
                 .Include(b => b.BlogUser)
                 .ToPagedListAsync(pageNumber, pageSize);
 
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Rahul's Blog";
             ViewData["SubText"] = "Software Stories";
 
@@ -52,7 +52,7 @@ namespace BlogProject.Controllers
 
         public IActionResult About()
         {
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Rahul's Blog";
             ViewData["SubText"] = "Software Stories";
 
@@ -61,7 +61,7 @@ namespace BlogProject.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Rahul's Blog";
             ViewData["SubText"] = "Software Stories";
 

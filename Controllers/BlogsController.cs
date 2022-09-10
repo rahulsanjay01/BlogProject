@@ -31,7 +31,7 @@ namespace BlogProject.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         public async Task<IActionResult> Index()
         {
-            ViewData["HeaderImage"] = "/images/home-bg.jpg";
+            ViewData["HeaderImage"] = "/images/background.jpg";
             ViewData["MainText"] = "Rahul's Blog";
             ViewData["SubText"] = "Blog Post Index";
 
