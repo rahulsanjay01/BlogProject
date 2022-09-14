@@ -11136,8 +11136,8 @@ header.masthead:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #212529;
-  opacity: 0.5;
+  background-color: black;
+  opacity: 0.2;
 }
 header.masthead .page-heading,
 header.masthead .post-heading,
