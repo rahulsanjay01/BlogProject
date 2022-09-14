@@ -242,8 +242,16 @@ a:hover {
   color: #0072eb;
 }
 
-li a:hover {
-    color: #ff8400;
+.linkedin>a:hover {
+    color: #1163bf;
+}
+
+.github>a:hover {
+    color: #7a319a;
+}
+
+.twitter>a:hover {
+    color: #1da1f3;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
