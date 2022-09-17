@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
-    <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
 </Project>
