@@ -458,4 +458,3 @@ C:\Users\v-ravi.ahir\Documents\code\BlogProject\obj\Debug\net5.0\Razor\Areas\Ide
 C:\Users\v-ravi.ahir\Documents\code\BlogProject\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\v-ravi.ahir\Documents\code\BlogProject\bin\Debug\net5.0\appsettings.json
 C:\Users\v-ravi.ahir\Documents\code\BlogProject\bin\Debug\net5.0\appsettings1.json
-C:\Users\v-ravi.ahir\Documents\code\BlogProject\obj\Debug\net5.0\BlogProject.csproj.AssemblyReference.cache
